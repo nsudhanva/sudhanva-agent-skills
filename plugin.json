@@ -1,0 +1,15 @@
+{
+	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+	"name": "sudhanva-agent-skills",
+	"version": "1.0.0",
+	"description": "Read-only skills and MCP connections for researching Sudhanva Narayana's public profile, production ML work, and technical writing.",
+	"author": {
+		"name": "Sudhanva Narayana",
+		"email": "nsudhanva@gmail.com",
+		"url": "https://sudhanva.me"
+	},
+	"homepage": "https://sudhanva.me/developers/",
+	"repository": "https://github.com/nsudhanva/sudhanva-agent-skills",
+	"license": "MIT",
+	"keywords": ["sudhanva", "agent-skills", "mcp", "machine-learning", "technical-writing"]
+}

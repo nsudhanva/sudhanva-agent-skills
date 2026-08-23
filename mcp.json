@@ -1,0 +1,13 @@
+{
+	"$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+	"mcpServers": {
+		"sudhanva-public-profile": {
+			"type": "streamable-http",
+			"url": "https://sudhanva.me/mcp"
+		},
+		"sudhanva-profile-insights": {
+			"type": "streamable-http",
+			"url": "https://sudhanva.me/mcp/product"
+		}
+	}
+}

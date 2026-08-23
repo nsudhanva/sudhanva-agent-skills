@@ -35,6 +35,9 @@ npx skills add nsudhanva/sudhanva-agent-skills
   names, or unpublished infrastructure.
 - The canonical discovery index is
   [`/.well-known/agent-skills/index.json`](https://sudhanva.me/.well-known/agent-skills/index.json).
+- [`plugin.json`](./plugin.json) and [`mcp.json`](./mcp.json) bundle these
+  skills with the public-data and profile-insight MCP servers as an
+  [Agent Plugin](https://agent-plugins.org/).
 
 ## License
 
