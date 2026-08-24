@@ -1,0 +1,12 @@
+{
+	"name": "sudhanva-agent-skills",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Validation for Sudhanva's public Agent Skills and plugin manifests.",
+	"scripts": {
+		"test": "node --test tests/*.test.mjs"
+	},
+	"engines": {
+		"node": ">=22"
+	}
+}

@@ -42,3 +42,14 @@ npx skills add nsudhanva/sudhanva-agent-skills
 ## License
 
 MIT. See [LICENSE](./LICENSE).
+
+## Validation
+
+Run the same dependency-free checks used by CI:
+
+```bash
+npm test
+```
+
+The suite verifies the plugin and MCP manifests, canonical project URLs, and every skill's
+frontmatter, directory name, top-level heading, and README entry.
