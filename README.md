@@ -1,8 +1,8 @@
 # Sudhanva Agent Skills
 
 Three small, read-only [Agent Skills](https://agentskills.io/) for researching
-Sudhanva Narayana's public work. Each skill uses canonical `sudhanva.me` pages
-and APIs and includes explicit guidance against inventing unpublished details.
+Sudhanva Narayana's public work. Each skill reads canonical `sudhanva.me` pages
+and APIs and tells the agent not to invent unpublished details.
 
 ## Install
 
