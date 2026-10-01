@@ -26,6 +26,22 @@ npx skills add nsudhanva/sudhanva-agent-skills
 | `find-production-ml-case-studies` | Find and compare published production ML case studies.   |
 | `find-technical-writing`          | Search and cite published technical writing.             |
 
+## Layout
+
+The repository follows the [Agent Plugins](https://agent-plugins.org/) package
+layout, so plugin hosts and the `skills` CLI both find the skills under
+`skills/`:
+
+```text
+sudhanva-agent-skills/
+├── plugin.json
+├── mcp.json
+└── skills/
+    ├── find-production-ml-case-studies/SKILL.md
+    ├── find-technical-writing/SKILL.md
+    └── research-sudhanva-profile/SKILL.md
+```
+
 ## Source and safety
 
 - All referenced data is public and read-only.
@@ -52,4 +68,5 @@ npm test
 ```
 
 The suite verifies the plugin and MCP manifests, canonical project URLs, and every skill's
-frontmatter, directory name, top-level heading, and README entry.
+frontmatter, directory name, top-level heading, and README entry. It also
+fails if a `SKILL.md` appears anywhere other than `skills/<name>/SKILL.md`.

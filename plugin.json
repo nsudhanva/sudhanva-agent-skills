@@ -1,7 +1,7 @@
 {
 	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
 	"name": "sudhanva-agent-skills",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Read-only skills and MCP connections for researching Sudhanva Narayana's public profile, production ML work, and technical writing.",
 	"author": {
 		"name": "Sudhanva Narayana",

@@ -32,21 +32,16 @@ test('MCP manifest contains canonical Streamable HTTP servers', async () => {
 });
 
 test('skill frontmatter is complete, unique, and matches its directory', async () => {
-	const entries = await readdir(root, { withFileTypes: true });
+	const entries = await readdir(new URL('skills/', root), { withFileTypes: true });
 	const directories = entries.filter((entry) => entry.isDirectory() && !entry.name.startsWith('.'));
 	const skills = [];
 
 	for (const directory of directories) {
-		let source;
-		try {
-			source = await read(`${directory.name}/SKILL.md`);
-		} catch (error) {
-			if (error.code === 'ENOENT') continue;
-			throw error;
-		}
+		const path = `skills/${directory.name}/SKILL.md`;
+		const source = await read(path);
 
 		const match = source.match(/^---\nname: ([^\n]+)\ndescription: ([^\n]+)\n---\n\n# /);
-		assert.ok(match, `${directory.name}/SKILL.md must have minimal frontmatter and an H1`);
+		assert.ok(match, `${path} must have minimal frontmatter and an H1`);
 		assert.equal(match[1], directory.name);
 		assert.ok(match[2].length >= 40, `${directory.name} needs a useful description`);
 		assert.match(source, /https:\/\/sudhanva\.me\//);
@@ -58,4 +53,17 @@ test('skill frontmatter is complete, unique, and matches its directory', async (
 
 	const readme = await read('README.md');
 	for (const skill of skills) assert.match(readme, new RegExp(`\\b${skill}\\b`));
+});
+
+test('skills live only in the Agent Plugins skills/ directory', async () => {
+	const entries = await readdir(root, { withFileTypes: true });
+	for (const entry of entries) {
+		if (!entry.isDirectory() || entry.name.startsWith('.') || entry.name === 'skills') continue;
+		await assert.rejects(
+			readFile(new URL(`${entry.name}/SKILL.md`, root)),
+			{ code: 'ENOENT' },
+			`${entry.name}/SKILL.md must move to skills/${entry.name}/SKILL.md`,
+		);
+	}
+	await assert.rejects(readFile(new URL('SKILL.md', root)), { code: 'ENOENT' });
 });

@@ -1,6 +1,6 @@
 {
 	"name": "sudhanva-agent-skills",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"private": true,
 	"description": "Validation for Sudhanva's public Agent Skills and plugin manifests.",
 	"scripts": {
