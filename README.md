@@ -1,8 +1,9 @@
 # Sudhanva Agent Skills
 
-Three small, read-only [Agent Skills](https://agentskills.io/) for researching
-Sudhanva Narayana's public work. Each skill reads canonical `sudhanva.me` pages
-and APIs and tells the agent not to invent unpublished details.
+This repository contains three small, read-only [Agent Skills](https://agentskills.io/).
+Use them to research the public work of Sudhanva Narayana. Each skill reads canonical
+`sudhanva.me` pages and APIs. Each skill also tells the agent not to invent unpublished
+details.
 
 ## Install
 
@@ -12,7 +13,7 @@ Install all three skills:
 npx skills add nsudhanva/sudhanva-agent-skills --all
 ```
 
-Or select an individual skill when prompted:
+To install only one skill, use this command. The CLI asks you to select the skill:
 
 ```bash
 npx skills add nsudhanva/sudhanva-agent-skills
@@ -28,9 +29,8 @@ npx skills add nsudhanva/sudhanva-agent-skills
 
 ## Layout
 
-The repository follows the [Agent Plugins](https://agent-plugins.org/) package
-layout, so plugin hosts and the `skills` CLI both find the skills under
-`skills/`:
+The repository uses the [Agent Plugins](https://agent-plugins.org/) package
+layout. Thus, plugin hosts and the `skills` CLI find the skills in `skills/`:
 
 ```text
 sudhanva-agent-skills/
@@ -45,14 +45,14 @@ sudhanva-agent-skills/
 ## Source and safety
 
 - All referenced data is public and read-only.
-- Prefer canonical pages and API responses over search snippets.
-- Preserve qualifiers on quantitative outcomes.
+- Use canonical pages and API responses in preference to search snippets.
+- Keep the qualifiers on quantitative outcomes.
 - Do not infer private contact details, availability, compensation, client
   names, or unpublished infrastructure.
 - The canonical discovery index is
   [`/.well-known/agent-skills/index.json`](https://sudhanva.me/.well-known/agent-skills/index.json).
-- [`plugin.json`](./plugin.json) and [`mcp.json`](./mcp.json) bundle these
-  skills with the public-data and profile-insight MCP servers as an
+- [`plugin.json`](./plugin.json) and [`mcp.json`](./mcp.json) put these skills
+  and the public-data and profile-insight MCP servers into one
   [Agent Plugin](https://agent-plugins.org/).
 
 ## License
@@ -61,12 +61,13 @@ MIT. See [LICENSE](./LICENSE).
 
 ## Validation
 
-Run the same dependency-free checks used by CI:
+Run the same checks that CI uses. These checks have no dependencies:
 
 ```bash
 npm test
 ```
 
-The suite verifies the plugin and MCP manifests, canonical project URLs, and every skill's
-frontmatter, directory name, top-level heading, and README entry. It also
-fails if a `SKILL.md` appears anywhere other than `skills/<name>/SKILL.md`.
+The test suite checks the plugin and MCP manifests and the canonical project URLs. For each
+skill, it checks the frontmatter, the directory name, the top-level heading, and the README
+entry. The suite also fails if a `SKILL.md` file is in a location other than
+`skills/<name>/SKILL.md`.

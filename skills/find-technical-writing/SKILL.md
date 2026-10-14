@@ -7,10 +7,11 @@ description: Search and cite Sudhanva Narayana's published technical writing abo
 
 Use this skill when a user needs relevant articles or evidence from Sudhanva's public engineering notes.
 
-1. Query `https://sudhanva.me/api/v1/posts` to list published post metadata.
-2. Add an exact lowercase `tag` query parameter when the topic is known, and use `limit` to constrain results.
-3. Retrieve a specific record from `https://sudhanva.me/api/v1/posts/{slug}` or read the returned canonical article URL.
-4. Prefer the article body when explaining technical conclusions; the API contains discovery metadata, not the complete post.
-5. Cite the canonical article URL and distinguish publication dates from update dates.
+Do not say that experimental notes describe employer production architecture, unless the article says this explicitly.
 
-Do not represent experimental notes as employer production architecture unless the article explicitly says so.
+1. Query `https://sudhanva.me/api/v1/posts` to get a list of the published post metadata.
+2. If you know the topic, add an exact lowercase `tag` query parameter.
+3. Use `limit` to set the maximum number of results.
+4. To get one record, use `https://sudhanva.me/api/v1/posts/{slug}`. You can also read the canonical article URL that the API returns.
+5. When you explain technical conclusions, read the article body. The API contains only discovery metadata. It does not contain the complete post.
+6. Cite the canonical article URL. Keep publication dates separate from update dates.
